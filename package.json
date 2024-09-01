@@ -15,14 +15,24 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "@hookform/resolvers": "^3.9.0",
+    "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.18.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "clsx": "^2.1.1",
+    "lucia": "^3.2.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.2"
+    "react-hook-form": "^7.53.0",
+    "tailwind-merge": "^2.5.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.16.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",

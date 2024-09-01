@@ -1,14 +1,16 @@
 export type Recipe = {
+  id?: string | null
   name: string
-  imageUrl?: string | null
-  servings?: number | null
-  prepTime?: number | null
-  ingredients?: string | null
-  instructions?: string | null
+  userId: string
+  imageUrl?: string
+  servings?: number
+  prepTime?: number
+  ingredients?: Ingredient[]
+  instructions?: string
 }
 
 export type Ingredient = {
   name: string
-  amount: number
-  unit: string
+  amount?: number
+  unit?: string
 }

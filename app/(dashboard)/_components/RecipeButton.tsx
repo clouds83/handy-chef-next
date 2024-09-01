@@ -11,7 +11,11 @@ export default function RecipeButton({ recipe }: { recipe: Recipe }) {
   const isActive = id === recipe?.id
 
   return (
-    <Link href={`/recipe/${recipe?.id}`} className={cn('flex items-center gap-2', { 'bg-lime-100': isActive })}>
+    <Link
+      href={`/recipe/${recipe?.id}`}
+      className={cn('flex p-3  items-center gap-2 hover:bg-gray-100', {
+        'bg-lime-100 hover:bg-lime-100': isActive,
+      })}>
       {recipe.imageUrl && (
         <Image
           width={64}

@@ -1,7 +1,10 @@
+import Action from '@/components/Action'
 import { Ingredient, Recipe } from '@/lib/types'
-import { getRecipe } from '@/server/actions/recipes'
+import { getRecipe } from '@/server/actions/recipeActions'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
+import DeleteRecipeButton from './_components/DeleteRecipeButton'
+import { PencilIcon } from '@heroicons/react/24/solid'
 
 export default async function RecipePage({ params }: { params: { id: string } }) {
   const { id } = params
@@ -11,14 +14,22 @@ export default async function RecipePage({ params }: { params: { id: string } })
 
   return (
     <>
-      <h2 className='text-4xl font-bold my-4'>{recipe.name}</h2>
+      <div className='flex justify-between'>
+        <h2 className='text-4xl font-bold my-4'>{recipe.name}</h2>
+
+        <div className='flex gap-2'>
+          <Action as='a' href={`/recipe/edit/${id}`} Icon={<PencilIcon className='size-6 text-white' />} />
+          <DeleteRecipeButton recipeId={id} />
+        </div>
+      </div>
+
       {recipe.imageUrl && (
         <Image
           src={recipe.imageUrl}
           alt={recipe.name}
           width={512}
           height={512}
-          className='object-cover rounded-lg h-64 w-96'
+          className='object-cover rounded-lg h-64 w-96 mb-4'
         />
       )}
       <p>

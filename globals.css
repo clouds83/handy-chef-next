@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+label {
+  @apply font-semibold;
+}
+
+input {
+  @apply font-normal;
+}
+
 @media (min-width: 1024px) and (max-width: 1366px) {
   html {
     font-size: 66%;
